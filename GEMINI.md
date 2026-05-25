@@ -59,7 +59,7 @@ The application follows a **Modular Component Architecture** with centralized st
    - [x] Rectify initial data mapping error on "Freelance Work" (type from `expense` -> `income`).
    - [x] Fix balance calculation.
 2. **Feature Completion**:
-   - [x] Introduce transaction deletion capability.
+   - [x] Introduce transaction deletion capability (with confirmation dialog).
 3. **UI/UX Overhaul**:
    - Implement premium custom color palettes, Outfit/Inter fonts, smooth hover feedback, and card micro-animations.
    - Deliver a responsive Dark/Light mode theme system.

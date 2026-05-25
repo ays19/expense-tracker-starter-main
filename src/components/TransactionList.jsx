@@ -52,10 +52,16 @@ function TransactionList({ transactions, onDeleteTransaction }) {
               </td>
               {onDeleteTransaction && (
                 <td>
-                  <button className="delete-btn" onClick={() => onDeleteTransaction(t.id)}>
+                  <button
+                    className="delete-btn"
+                    onClick={() => {
+                      if (window.confirm('Are you sure you want to delete this transaction?')) {
+                        onDeleteTransaction(t.id);
+                      }
+                    }}
+                  >
                     Delete
-                  </button>
-                </td>
+                  </button>                </td>
               )}
             </tr>
           ))}
