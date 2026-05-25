@@ -66,3 +66,7 @@ The application follows a **Modular Component Architecture** with centralized st
    - Deconstruct `App.jsx` into modular React components (`[x] SummaryCards`, `[x] TransactionForm`, `[x] TransactionTable`, `[x] Filters`).
    - [x] Add a spending by category chart using Recharts.
 
+## Important
+- Server is always running on localhost:5173
+- Never run npm run dev again
+- Vite hot reloads automatically

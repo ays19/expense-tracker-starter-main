@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Light Theme - Organic Luxury */
+  --bg-color: #fdfcf8;
+  --surface-color: rgba(255, 255, 255, 0.7);
+  --surface-border: rgba(220, 210, 190, 0.5);
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --accent-color: #5e7d6d; /* Sage Green */
+  --accent-hover: #4a6355;
+  --income-color: #2d6a4f;
+  --expense-color: #bc4749;
+  --highlight-color: #d4af37; /* Muted Gold */
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] {
+  /* Dark Theme - Obsidian Zen */
+  --bg-color: #121412;
+  --surface-color: rgba(30, 32, 30, 0.7);
+  --surface-border: rgba(60, 65, 60, 0.5);
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --accent-color: #8ab8a0;
+  --accent-hover: #a3cbb3;
+  --income-color: #74c69d;
+  --expense-color: #ff7b7b;
+  --highlight-color: #c5a059;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(30, 32, 30, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +45,15 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #333;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
 }
