@@ -3,6 +3,7 @@ import './App.css'
  import SummaryCards from './components/SummaryCards'
 import TransactionForm from './components/TransactionForm'
 import TransactionList from './components/TransactionList'
+import SpendingChart from './components/SpendingChart'
 
 function App() {
   const [transactions, setTransactions] = useState([
@@ -35,6 +36,8 @@ function App() {
       <p className="subtitle">Track your income and expenses</p>
 
       <SummaryCards transactions={transactions} />
+
+      <SpendingChart transactions={transactions} />
 
       <TransactionForm onAddTransaction={handleAddTransaction} />
 
