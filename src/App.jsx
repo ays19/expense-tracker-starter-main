@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
- import SummaryCards from './components/SummaryCards'
+import SummaryCards from './components/SummaryCards'
 import TransactionForm from './components/TransactionForm'
 import TransactionList from './components/TransactionList'
 import SpendingChart from './components/SpendingChart'
@@ -17,10 +17,20 @@ function App() {
     { id: 8, description: "Netflix", amount: 15, type: "expense", category: "entertainment", date: "2025-01-10" },
   ]);
 
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   const handleAddTransaction = (transactionData) => {
     const newTransaction = {
       ...transactionData,
-      id: Date.now(),
+      id: crypto.randomUUID(),
       date: new Date().toISOString().split('T')[0],
     };
     setTransactions([...transactions, newTransaction]);
@@ -32,8 +42,17 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Finance Tracker</h1>
-      <p className="subtitle">Track your income and expenses</p>
+      <header className="app-header">
+        <div className="header-content">
+          <div>
+            <h1>Finance Tracker</h1>
+            <p className="subtitle">Track your income and expenses</p>
+          </div>
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Dark Mode">
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+        </div>
+      </header>
 
       <SummaryCards transactions={transactions} />
 
