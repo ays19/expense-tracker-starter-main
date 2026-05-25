@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-  /* Light Theme - Organic Luxury */
+  /* Organic Luxury Palette */
   --bg-color: #fdfcf8;
-  --surface-color: rgba(255, 255, 255, 0.7);
-  --surface-border: rgba(220, 210, 190, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.6);
+  --surface-border: rgba(220, 210, 190, 0.4);
   --text-primary: #2d3436;
   --text-secondary: #636e72;
   --accent-color: #5e7d6d; /* Sage Green */
@@ -12,20 +12,20 @@
   --income-color: #2d6a4f;
   --expense-color: #bc4749;
   --highlight-color: #d4af37; /* Muted Gold */
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.03);
   --radius-lg: 24px;
-  --radius-md: 12px;
+  --radius-md: 16px;
   --radius-sm: 8px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(255, 255, 255, 0.2);
 }
 
 [data-theme='dark'] {
-  /* Dark Theme - Obsidian Zen */
+  /* Obsidian Zen Palette */
   --bg-color: #121412;
-  --surface-color: rgba(30, 32, 30, 0.7);
-  --surface-border: rgba(60, 65, 60, 0.5);
+  --surface-color: rgba(30, 32, 30, 0.6);
+  --surface-border: rgba(60, 65, 60, 0.4);
   --text-primary: #e0e0e0;
   --text-secondary: #a0a0a0;
   --accent-color: #8ab8a0;
@@ -33,7 +33,7 @@
   --income-color: #74c69d;
   --expense-color: #ff7b7b;
   --highlight-color: #c5a059;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   --glass-bg: rgba(30, 32, 30, 0.4);
   --glass-border: rgba(255, 255, 255, 0.05);
 }
@@ -51,9 +51,25 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Subtle grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
+  letter-spacing: -0.02em;
 }
